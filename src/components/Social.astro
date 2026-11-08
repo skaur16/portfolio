@@ -1,0 +1,36 @@
+---
+// A stacked deck of projects: the top one faces you, its neighbours fan out behind it (the script places them).
+import { posts, section } from "../data/posts";
+import { site } from "../data/site";
+
+const slides = posts
+  .map(
+    (p, i) => `
+    <figure>
+      <div class="reel"><img src="/assets/posts/${p.slug}.jpg" alt="" loading="lazy">${
+        p.embed ? "" : `<a class="reel-out" href="${p.href}" target="_blank" rel="noopener"><i aria-hidden="true"></i><span>${section.open} &#8599;</span></a>`
+      }</div>
+      <div class="info">
+        <small>${String(i + 1).padStart(2, "0")} / ${String(posts.length).padStart(2, "0")}</small>
+        <div><h3>${p.title}</h3><p>${p.line}</p></div>
+        <a href="${p.href}" target="_blank" rel="noopener">${section.view} &#8599;</a>
+      </div>
+    </figure>`,
+  )
+  .join("");
+---
+<section class="proof" id="social">
+  <header class="rv" id="socialHead">
+    <h2>{section.heading}</h2>
+    <p>{section.sub}</p>
+  </header>
+  <div class="proof-row">
+    <p class="side rv"><em set:html={section.aside.join("<br>")}></em></p>
+    <div class="slider rv" id="posts" aria-roledescription="carousel" aria-label="Projects">
+      <div class="slides" id="slides" set:html={slides}></div>
+      <button class="arrow prev" id="prev" type="button" aria-label="Previous project">&#8249;</button>
+      <button class="arrow next" id="next" type="button" aria-label="Next project">&#8250;</button>
+    </div>
+    <p class="side right rv"><a class="chip" href={site.github}><img src="/assets/cut/github.webp" alt="">GitHub.</a><a class="chip" href={site.linkedin}><img src="/assets/cut/linkedin.webp" alt="">LinkedIn.</a></p>
+  </div>
+</section>

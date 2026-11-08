@@ -1,0 +1,17 @@
+---
+import { site } from "../data/site";
+---
+<section class="beyond" id="beyond">
+  <div class="beyond-text" id="beyondText">
+    <p class="lede2 rv">My favourite thing I've shipped,<br>for your consideration.</p>
+    <div class="rv">
+      <p class="scrawl" aria-hidden="true">yes, that's really mine :)<svg viewBox="0 0 150 90" fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="draw" d="M4 62C30 84 62 84 86 62C104 45 112 28 138 16"/><path class="draw head" d="M120 10L139 15L130 33"/></svg></p>
+      <h2>yes, the demo worked on the first take</h2>
+    </div>
+  </div>
+  <figure class="rv yt" id="beyondMedia">
+    <div id="ytFrame"></div>
+    <img class="poster" src={site.video.poster} alt={site.video.alt} loading="lazy">
+    <button type="button" id="ytToggle" aria-label="Play video" aria-pressed="false"><i aria-hidden="true"></i></button>
+  </figure>
+</section>

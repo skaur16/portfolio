@@ -1,0 +1,9 @@
+---
+// the player: a display bay on the left, then Rewind, Stop and Sound keys in a dark well
+---
+<nav class="keys" id="keys" aria-label="Tape controls">
+  <div class="screen" id="screen"><i class="led" aria-hidden="true"></i><p id="now" aria-live="polite"><span id="nowText"><span>Ready &ndash;</span> Pick a tape</span></p><time id="clock">00:00</time></div>
+  <div class="slot"><span aria-hidden="true"><svg viewBox="0 0 24 12"><path d="M11 0L1 6l10 6zM23 0L13 6l10 6z"/></svg>/Rewind</span><button class="key" type="button" id="kRew" aria-label="Rewind to the cassette"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-9 7 9 7z"/><path d="M21 5l-9 7 9 7z"/></svg></i></button></div>
+  <div class="slot stop"><span aria-hidden="true">Stop</span><button class="key" type="button" id="kStop" aria-label="Stop voice note"><i></i></button></div>
+  <div class="slot"><span aria-hidden="true">Sound</span><button class="key" type="button" id="sound" aria-label="Turn sound off" aria-pressed="true"><i></i></button></div>
+</nav>

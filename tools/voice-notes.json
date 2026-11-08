@@ -1,0 +1,90 @@
+{
+  "_": "What is said in each voice note, one line per entry. Words in [brackets] are ElevenLabs audio tags: the v3 voice acts on them and the captions leave them out. `pnpm voice` turns these into narration and timed captions; `pnpm voice 3` redoes one note.",
+  "notes": [
+    [
+      "[warmly] Hey stranger... welcome to Sharn's story, in Sharn's words.",
+      "I'm Sharn, a developer from Waterloo, Ontario.",
+      "I write code for the web... and I've been doing it since before I knew it was a job.",
+      "[chuckles] My first program was a webpage with a marquee tag and a visitor counter.",
+      "It got eleven visits. [laughs] Ten were me.",
+      "Grow up curious, and everyone wants exactly one thing for you: [sighs] a sensible plan.",
+      "[softly] I had other plans.",
+      "Well... I actually have a sensible plan now. But we'll get to that."
+    ],
+    [
+      "[amused] Hear me out... building for the web was never the plan.",
+      "[earnestly] I swear.",
+      "When you start out, there are only two doors: [dryly] Java... or C++.",
+      "[sighs] I tried both.",
+      "[laughs] Yeah. Both doors.",
+      "But turns out there was a window. [warmly] It was called the browser.",
+      "[excited] Fun fact: my first real project was a to-do app, like everyone else's.",
+      "[deadpan] Most people stop at the to-do app.",
+      "I added a backend, then a login... [laughs] then a bug that logged everyone in as me.",
+      "[sheepishly] I knew nothing, and I almost shipped it."
+    ],
+    [
+      "[reflective] 8,000 lines of code, in a codebase I had only seen in screenshots.",
+      "[curious] And you know what screenshots skip?",
+      "[softly] The most important parts.",
+      "[sighs] Nobody warns you about the move from tutorials to a real repo.",
+      "[laughs] Nobody teaches you to navigate a ten-year-old migrations folder.",
+      "[exhales] Culture shock was very real.",
+      "[proudly] But I made it.",
+      "[warmly] Clean... and with tests."
+    ],
+    [
+      "[cheerfully] Like every junior on the team, I worked the support queue to fund my weekends.",
+      "[amused] Well, basically the IT desk... but for our own product.",
+      "Code was my second favourite part of the job.",
+      "[curious] You know what the first was?",
+      "[warmly] It was the customers who came in fighting with our app.",
+      "I'd fix their issue in five, [chuckles] and then we'd talk for another thirty minutes.",
+      "[sincerely] I love talking to people to solve their problems.",
+      "[proudly] Eight months in, I was running the on-call rotation... and I still took those calls.",
+      "[amused] I also noticed that nobody read our release notes.",
+      "[mischievously] But everyone read the little banner inside the app.",
+      "[excited] So you know what? I put the release notes in the banner.",
+      "We got what we needed. Best ad space on the product, [laughs] and it came with a close button."
+    ],
+    [
+      "[cheerfully] My first big project was a design system, with a team across three time zones.",
+      "[sheepishly] Well... my meeting attendance was the bare minimum,",
+      "[amused] because I was busy building, pairing with people, and getting lost in Figma files.",
+      "[playfully] You could say I was studying cross-functional communication... in the field,",
+      "[warmly] and it was totally worth it."
+    ],
+    [
+      "[dramatically] Then came the big rewrite... and the second biggest risk of my life:",
+      "[softly] a one-way migration to production.",
+      "One way because... [nervously] I don't know, a rollback plan felt like a plan.",
+      "[excited] And guess what, I discovered feature flags,",
+      "[laughs] made the best mistakes,",
+      "and moved the whole thing over... on a Friday night.",
+      "[exhales] The most terrifying time of my life.",
+      "[whispers] Well, my manager does not need to hear about this."
+    ],
+    [
+      "[cheerfully] My next role came with a side quest: mentoring interns through their first pull requests.",
+      "[amused] If you think tech leads ask hard questions,",
+      "[laughs] try a room full of interns.",
+      "[warmly] We built a small app together, and it was so much fun."
+    ],
+    [
+      "[softly] I promised my parents I'd get a stable job... and I did.",
+      "[proudly] Today I'm a full-stack developer, working on things that real people use every day.",
+      "[amused] So yes, the kid with the marquee tag now has a stable job.",
+      "[laughs] And yeah, my resume's very, very proud of me.",
+      "[curious] But remember when I said production was the second biggest risk of my life?",
+      "[softly] Well... this is the first.",
+      "[reflective] Everything the sensible plan asked for, I already have it.",
+      "[sincerely] And I'm still sending you this.",
+      "[warmly] Because what I love is building things that make people's days a little easier,",
+      "[hopeful] and I want to do that for you."
+    ],
+    [
+      "[warmly] Thank you... for the ones who actually stayed until the end.",
+      "[excited] Here you go: the source code for this site. [laughs] Pencil, cassette, tape and all."
+    ]
+  ]
+}

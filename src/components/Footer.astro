@@ -1,0 +1,13 @@
+---
+import { site } from "../data/site";
+import { links } from "./Nav.astro";
+---
+<footer class="foot">
+  <nav aria-label="Footer">
+    {links.map(([id, label]) => <a href={`#${id}`} data-go={id}>{label}</a>)}
+  </nav>
+  <p class="social"><a href={site.github}>GitHub</a><a href={site.linkedin}>LinkedIn</a></p>
+  <p class="built"><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>Built by hand. Zero templates, some shouting. Runs on <a href="https://astro.build/">Astro</a> and Cloudflare.</span></p>
+  <p class="sign">{site.name}'s story, in {site.name}'s words.</p>
+  <p class="copyright">&copy; {site.year} {site.fullName}</p>
+</footer>

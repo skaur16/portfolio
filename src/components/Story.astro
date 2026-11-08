@@ -1,0 +1,57 @@
+---
+// The rail of tapes. The markup is built as one string, word for word the way the player expects it,
+// so the script only has to drive what is already on the page.
+import { stories, type Cover } from "../data/stories";
+import { CAPTIONS } from "../data/captions";
+
+const cover = (c: Cover) => {
+  switch (c.kind) {
+    case "place":
+      return `<div class="cover plate p-${c.key}"><span class="word">${c.word}</span><img class="pic" src="${c.image}" alt=""></div>`;
+    case "plate":
+      return `<div class="cover plate p-${c.key}"><img class="full" src="${c.image}" alt=""><span class="word">${c.word}</span>${
+        c.mask ? `<img class="full fg" src="${c.image}" style="-webkit-mask-image:url(${c.mask});mask-image:url(${c.mask})" alt="">` : ""
+      }${c.cutout ? `<img class="who" src="${c.cutout}" alt="">` : ""}</div>`;
+    case "marks":
+      return `<div class="cover c-failed"><div class="marks">${c.lines.map(([t, struck]) => (struck ? `<s>${t}</s>` : t)).join("<br>")}</div>${
+        c.cutout ? `<img class="who" src="${c.cutout}" alt="">` : ""
+      }</div>`;
+    case "big":
+      return `<div class="cover c-risk"><span class="big">${c.text} <b>${c.accent}</b></span>${c.cutout ? `<img class="who" src="${c.cutout}" alt="">` : ""}</div>`;
+  }
+};
+// read mode has no scrolling, so a longer note simply sets a little smaller to fit its card
+const readSize = (l: (typeof CAPTIONS)[number]) => {
+  const n = l.reduce((sum, x) => sum + x[1].length, 0);
+  return n > 700 ? 0.77 : n > 480 ? 0.92 : 1;
+};
+const rail = stories
+  .map(
+    (s, i) => `
+    <article class="card">
+      <div class="shot"><div class="flipper">
+        <div class="face front">
+          ${cover(s.cover)}
+          <span class="tapeno">Tape ${String(i + 1).padStart(2, "0")}</span>
+          <button class="key note${i ? "" : " first"}" type="button" aria-label="Play voice note: ${s.title}"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg></i><span>Hear it</span></button>
+          <button class="read" type="button" aria-label="Read this note: ${s.title}">Read it</button>
+        </div>
+        <div class="face back" inert>
+          <p class="tag"><span>Tape ${String(i + 1).padStart(2, "0")}</span><span class="clock"></span></p>
+          <div class="lines" style="--read:${readSize(CAPTIONS[i])}"><div class="script">${CAPTIONS[i]
+            .map(([, text, times]) => `<span>${text.split(" ").map((word, k) => `<i style="--d:${times[k]}s">${word}</i>`).join(" ")} </span>`)
+            .join("")}</div></div>
+          <button class="key note close" type="button"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg></i><span>Stop</span></button>
+          <i class="bar" aria-hidden="true"></i>
+        </div>
+      </div>${i ? "" : `<p class="hear-note" aria-hidden="true">start<br> here<svg viewBox="0 0 60 30" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8C18 24 34 26 52 16"/><path d="M43 9L53 16L44 25"/></svg></p>`}</div>
+      <h3>${s.title}</h3>
+      <p>${s.meta}</p>
+    </article>`,
+  )
+  .join("");
+---
+<section class="works" id="story">
+  <h2>The Story So Far</h2>
+  <div class="rail" id="rail" set:html={rail}></div>
+</section>

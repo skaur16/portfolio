@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "skaur-dev",
+  "compatibility_date": "2026-11-01",
+  // the built site is served straight from Cloudflare's edge as static assets; there is no worker code
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+  // once the zone is on the account, point the custom domain at it:
+  // "routes": [{ "pattern": "skaur.dev", "custom_domain": true }, { "pattern": "www.skaur.dev", "custom_domain": true }]
+}

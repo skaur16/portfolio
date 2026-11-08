@@ -1,0 +1,17 @@
+---
+import { site } from "../data/site";
+export const links = [
+  ["top", "Home"],
+  ["story", "Story"],
+  ["beyond", "Featured"],
+  ["social", "Projects"],
+  ["about", "About"],
+];
+---
+<header class="nav">
+  <a class="logo" href="#top" data-go="top">{site.logo}</a>
+  <nav aria-label="Sections">
+    {links.map(([id, label]) => <a href={`#${id}`} data-go={id}>{label}</a>)}
+  </nav>
+  <p class="open"><span></span>{site.status} &bull; {site.location}</p>
+</header>
